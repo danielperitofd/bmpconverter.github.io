@@ -23,3 +23,45 @@ Pré-requisitos
 Python 3.6 ou superior
 Pip (gerenciador de pacotes do Python)
 Virtualenv (recomendado para criar um ambiente virtual)
+
+Para clonar esse repositorio:
+
+git clone https://github.com/seu-usuario/BmpConverter.git
+cd BmpConverter
+
+ATIVANDO AMBIENTE VIRRUAL
+
+python -m venv venv
+source venv/bin/activate  # No Windows, use: venv\Scripts\activate
+
+INSTALANDO AS DEPENDÊNCIAS 
+
+pip install -r requirements.txt
+
+
+RODANDO A APLICACAO 
+
+python app.py
+
+
+ESTRUTURA DO PROJETO
+
+BmpConverter/
+│
+├── app.py                 # Código principal da aplicação Flask
+├── requirements.txt       # Lista de dependências do projeto
+├── README.md              # Descrição do projeto
+│
+├── static/
+│   ├── css/
+│   │   └── styles.css     # Arquivo de estilo CSS personalizado
+│   └── converted/         # Pasta para armazenar imagens convertidas
+│
+├── templates/
+│   └── index.html         # Template HTML principal
+│
+├── uploads/               # Pasta para armazenar imagens carregadas
+└── output/                # Pasta para armazenar arquivos temporários
+
+
+
