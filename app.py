@@ -73,5 +73,15 @@ def download_all():
     zip_buffer.seek(0)
     return send_file(zip_buffer, as_attachment=True, download_name='all_converted_images.zip', mimetype='application/zip')
 
+@app.route('/clear-images', methods=['POST'])
+def clear_images():
+    folders_to_clear = [UPLOAD_FOLDER, OUTPUT_FOLDER]
+    for folder in folders_to_clear:
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+    return redirect('/')
+
 if __name__ == '__main__':
     app.run(debug=True)
